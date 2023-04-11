@@ -9,10 +9,14 @@ export const metadata = {
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`bg-dark text-text ${inter.className}`}>
+      <body className={`bg-dark text-text ${inter.className} overflow-hidden`}>
         <Navbar />
         {children}
       </body>

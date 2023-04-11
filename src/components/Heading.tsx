@@ -9,19 +9,29 @@ const alumniSans = Alumni_Sans({
 const heading = cva<{
   size: Record<"h1" | "h2" | "h3" | "h4" | "h5", string>;
   fontFamily: Record<"alumniSans" | "inter", string>;
+  weight: Record<"bold" | "normal", string>;
 }>(["font-bold", "text-text"], {
   variants: {
     size: {
-      h1: "text-5xl",
-      h2: "text-4xl",
-      h3: "text-3xl",
-      h4: "text-2xl",
-      h5: "text-xl",
+      h1: "text-6xl",
+      h2: "text-5xl",
+      h3: "text-4xl",
+      h4: "text-3xl",
+      h5: "text-2xl",
     },
     fontFamily: {
       alumniSans: alumniSans.className,
       inter: "",
     },
+    weight: {
+      bold: "font-bold",
+      normal: "font-normal",
+    },
+  },
+  defaultVariants: {
+    size: "h1",
+    fontFamily: "alumniSans",
+    weight: "bold",
   },
 });
 

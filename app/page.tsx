@@ -1,13 +1,15 @@
+import { Contact } from "./components/Contact/Contact";
 import { Hero } from "./components/Hero";
 import { LatestBlog } from "./components/LatestBlog/LatestBlog";
-import { TechStack } from "./components/TechStack/TechStack";
+import { Work } from "./components/Work";
 
 export default function Home() {
   return (
-    <main className="snap-mandatory snap-y h-[100vh] overflow-auto">
+    <main className="h-[100vh] snap-y snap-mandatory overflow-auto">
       <Hero />
-      <TechStack />
+      <Work />
       <LatestBlog />
+      <Contact />
     </main>
   );
 }

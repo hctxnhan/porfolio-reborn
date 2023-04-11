@@ -26,20 +26,18 @@ export function TechStack() {
   });
 
   return (
-    <div className="h-[100vh] w-full snap-start overflow-hidden">
-      <div className="flex h-full flex-col items-center justify-center gap-4 p-8">
-        {techStackMapToPattern.map((rows, index) => (
-          <div key={index} className="flex items-center justify-center gap-4">
-            {rows.stacks.map((tech, i) => (
-              <TechStackItem
-                key={i}
-                tech={tech}
-                order={rows.startIndex + i + 1}
-              />
-            ))}
-          </div>
-        ))}
-      </div>
+    <div className="flex flex-col items-center justify-center gap-4 p-8">
+      {techStackMapToPattern.map((rows, index) => (
+        <div key={index} className="flex items-center justify-center gap-4">
+          {rows.stacks.map((tech, i) => (
+            <TechStackItem
+              key={i}
+              tech={tech}
+              order={rows.startIndex + i + 1}
+            />
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
