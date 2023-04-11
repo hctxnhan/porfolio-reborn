@@ -6,6 +6,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -13,16 +14,6 @@ module.exports = {
         dark: "#020617",
         text: "#f8fafc",
         border: "#94a3b8",
-      },
-      keyframes: {
-        marqueeone: {
-          "0%": { transform: "translateX(100vw)" },
-          "100%": { transform: "translateX(calc(-100% + 100vw))" },
-        },
-        marqueetwo: {
-          "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(calc(-100% + 100vw))" },
-        },
       },
     },
     backgroundSize: (theme) => ({

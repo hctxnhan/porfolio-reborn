@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { PropsWithChildren } from "react";
 import { Alumni_Sans } from "next/font/google";
+import { twMerge } from "tailwind-merge";
 
 const alumniSans = Alumni_Sans({
   subsets: ["latin"],
@@ -8,9 +9,9 @@ const alumniSans = Alumni_Sans({
 
 const heading = cva<{
   size: Record<"h1" | "h2" | "h3" | "h4" | "h5", string>;
-  fontFamily: Record<"alumniSans" | "inter", string>;
+  fontFamily: Record<"alumniSans", string>;
   weight: Record<"bold" | "normal", string>;
-}>(["font-bold", "text-text"], {
+}>([""], {
   variants: {
     size: {
       h1: "text-6xl",
@@ -21,23 +22,21 @@ const heading = cva<{
     },
     fontFamily: {
       alumniSans: alumniSans.className,
-      inter: "",
     },
     weight: {
       bold: "font-bold",
       normal: "font-normal",
     },
   },
-  defaultVariants: {
-    size: "h1",
-    fontFamily: "alumniSans",
-    weight: "bold",
-  },
 });
 
 export type IHeadingProps = VariantProps<typeof heading> & PropsWithChildren;
 
 export function Heading(props: IHeadingProps) {
-  const { size, fontFamily } = props;
-  return <h1 className={heading({ size, fontFamily })}>{props.children}</h1>;
+  const { size, fontFamily, weight } = props;
+  return (
+    <h1 className={twMerge(heading({ size, fontFamily, weight }))}>
+      {props.children}
+    </h1>
+  );
 }

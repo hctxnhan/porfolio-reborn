@@ -1,6 +1,6 @@
 import { Alumni_Sans } from "next/font/google";
 import Image from "next/image";
-
+import { ParallaxText } from "@src/components/Marquee";
 const sixCaps = Alumni_Sans({
   subsets: ["latin"],
 });
@@ -28,12 +28,13 @@ export function Hero() {
           />
         </div>
       </div>
-      <p className="absolute bottom-0 left-0 -translate-x-32 -rotate-6 transform whitespace-nowrap text-[450px] font-semibold animate-[marqueeone_15s_linear_infinite]">
-        FULLSTACK WEB DEVELOPER
-      </p>
-      <p className="absolute bottom-0 left-0 -translate-x-32 -rotate-6 transform whitespace-nowrap text-[450px] font-semibold delay-[15000] animate-[marqueetwo_15s_linear_infinite]">
-        FULLSTACK WEB DEVELOPER
-      </p>
+      <div className="absolute -bottom-56 -rotate-6 transform">
+        <ParallaxText baseVelocity={-1.2}>
+          <p className="whitespace-nowrap text-[450px] uppercase">
+            Fullstack Web Developer
+          </p>
+        </ParallaxText>
+      </div>
     </div>
   );
 }

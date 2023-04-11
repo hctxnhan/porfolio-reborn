@@ -1,5 +1,4 @@
 import { cva, type VariantProps } from "class-variance-authority";
-import { PropsWithChildren } from "react";
 
 const section = cva<{ layout: Record<"centered", string> }>(
   "relative h-[100vh] w-full snap-start px-8",
